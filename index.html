@@ -160,7 +160,7 @@
         <a href="#faq" class="hover:text-sky-400 transition-colors" data-i18n="nav_faq">FAQ</a>
       </nav>
 
-      <!-- Action Buttons & Language Selector -->
+      <!-- Action Buttons, Language Selector & Download Dropdown -->
       <div class="hidden sm:flex items-center gap-3">
         
         <!-- Language Selector Dropdown (Desktop) -->
@@ -193,11 +193,36 @@
           <span data-i18n="nav_wa">WhatsApp Support</span>
         </a>
 
-        <!-- Download Button -->
-        <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="px-5 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all glow-btn flex items-center gap-2">
-          <i class="fa-solid fa-cloud-arrow-down"></i>
-          <span data-i18n="nav_download">Télécharger</span>
-        </a>
+        <!-- Download Button with Dual Choices Dropdown -->
+        <div class="relative" id="downloadSelectorDesktop">
+          <button id="downloadBtnDesktop" onclick="toggleDownloadMenu()" class="px-5 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all glow-btn flex items-center gap-2 focus:outline-none shadow-lg">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <span data-i18n="nav_download">Télécharger</span>
+            <i class="fa-solid fa-chevron-down text-[10px] text-white/80 transition-transform duration-200" id="downloadChevron"></i>
+          </button>
+          
+          <div id="downloadDropdown" class="hidden absolute end-0 mt-2 w-72 bg-[#0c1533] border border-slate-700/90 rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-2xl">
+            <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard_Avec_Labo.exe" class="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-500/15 border border-transparent hover:border-sky-500/30 transition-all text-start group">
+              <div class="w-9 h-9 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-flask-vial"></i>
+              </div>
+              <div>
+                <div class="font-bold text-xs text-white" data-i18n="nav_download_with_lab">Version Avec Labos (Sciences)</div>
+                <div class="text-[11px] text-slate-400" data-i18n="nav_download_with_lab_desc">Électricité, circuits, verrerie & maths</div>
+              </div>
+            </a>
+            <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-500/15 border border-transparent hover:border-sky-500/30 transition-all text-start group mt-1">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+              <div>
+                <div class="font-bold text-xs text-white" data-i18n="nav_download_no_lab">Version Sans Labos (Maths)</div>
+                <div class="text-[11px] text-slate-400" data-i18n="nav_download_no_lab_desc">Allégée : traceur f(x), Casio, géométrie</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <!-- Mobile Controls (Hamburger & Lang) -->
@@ -236,9 +261,13 @@
       <a href="#faq" class="text-slate-300 hover:text-sky-400" data-i18n="nav_faq">FAQ & Support</a>
 
       <div class="pt-3 flex flex-col gap-2.5">
-        <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full text-center py-3 bg-sky-500 text-white font-bold rounded-xl flex items-center justify-center gap-2">
-          <i class="fa-solid fa-download"></i>
-          <span data-i18n="mobile_download">Télécharger Setup (Windows)</span>
+        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard_Avec_Labo.exe" class="w-full text-center py-3 bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg">
+          <i class="fa-solid fa-flask-vial text-amber-300"></i>
+          <span data-i18n="mobile_download_with_lab">Télécharger Avec Labos (Sciences)</span>
+        </a>
+        <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full text-center py-3 bg-slate-800 text-white border border-slate-700 hover:border-sky-400 font-bold rounded-xl flex items-center justify-center gap-2">
+          <i class="fa-solid fa-calculator text-sky-400"></i>
+          <span data-i18n="mobile_download_no_lab">Télécharger Sans Labos (Maths)</span>
         </a>
         <a id="mobile-wa-link" href="https://wa.me/21629403406?text=Bonjour%20professeur,%20je%20souhaite%20des%20renseignements%20sur%20SoltaniBoard" target="_blank" class="w-full text-center py-3 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-bold rounded-xl flex items-center justify-center gap-2">
           <i class="fa-brands fa-whatsapp"></i>
@@ -249,7 +278,7 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative pt-36 pb-20 md:pt-48 md:pb-28 hero-glow overflow-hidden">
+  <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 hero-glow overflow-hidden">
     <!-- Floating background math orbs -->
     <div class="absolute top-1/4 start-10 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute top-1/3 end-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -268,19 +297,34 @@
       <!-- Main Headline with Gradient Effect -->
       <h1 data-aos="fade-up" class="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1] mb-6" data-i18n-html="hero_title">
         Donnez Vie à Vos Cours <br/>
-        <span class="gradient-text">de Mathématiques & Sciences</span>
+        <span class=\'gradient-text\'>de Mathématiques & Sciences</span>
       </h1>
 
       <p data-aos="fade-up" data-aos-delay="100" class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal" data-i18n-html="hero_desc">
         Plus qu'un tableau blanc classique : une suite pédagogique complète avec <strong>GeoGebra</strong>, calculatrice <strong>Casio fx-991ES toujours visible</strong>, <strong>instruments de géométrie magnétiques</strong> et simulateurs de physique-chimie.
       </p>
 
-      <!-- CTA Buttons -->
-      <div data-aos="fade-up" data-aos-delay="200" class="flex items-center justify-center mb-12">
-        <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full sm:w-auto px-10 py-4.5 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white font-display font-bold text-lg hover:from-sky-400 hover:to-indigo-500 transition-all transform hover:-translate-y-1 glow-btn flex items-center justify-center gap-3">
-          <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
-          <span data-i18n="hero_cta">Télécharger SoltaniBoard (Windows)</span>
+      <!-- DUAL DOWNLOAD ACTION BUTTONS -->
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto mb-12">
+        
+        <!-- Option 1: Avec Laboratoires -->
+        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard_Avec_Labo.exe" id="hero-btn-lab" class="flex-1 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all transform hover:-translate-y-1 glow-btn flex flex-col items-center justify-center gap-1.5 shadow-xl text-center group">
+          <div class="flex items-center gap-2 font-display font-bold text-base sm:text-lg">
+            <i class="fa-solid fa-flask-vial text-xl text-amber-300 group-hover:scale-110 transition-transform"></i>
+            <span data-i18n="hero_cta_with_lab">Télécharger — Avec Labos</span>
+          </div>
+          <span class="text-[11px] sm:text-xs text-sky-100 font-medium opacity-90" data-i18n="hero_cta_with_lab_sub">Physique, Circuits RC/RLC, Chimie & Maths</span>
         </a>
+
+        <!-- Option 2: Sans Laboratoires -->
+        <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" id="hero-btn-nolab" class="flex-1 p-4 sm:p-5 rounded-2xl glass-card border border-sky-400/40 text-white hover:border-sky-400 hover:bg-slate-800/80 transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center gap-1.5 shadow-lg text-center group">
+          <div class="flex items-center gap-2 font-display font-bold text-base sm:text-lg">
+            <i class="fa-solid fa-calculator text-xl text-sky-400 group-hover:scale-110 transition-transform"></i>
+            <span data-i18n="hero_cta_no_lab">Télécharger — Sans Labos</span>
+          </div>
+          <span class="text-[11px] sm:text-xs text-slate-300 font-medium" data-i18n="hero_cta_no_lab_sub">Version Allégée : Maths, Casio & Géométrie</span>
+        </a>
+
       </div>
 
       <!-- Trust Badges -->
@@ -324,6 +368,79 @@
             </div>
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DUAL EDITIONS COMPARISON SECTION -->
+  <section class="py-12 bg-[#070e24] border-y border-slate-800/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Edition 1: Avec Laboratoires -->
+        <div class="glass-card rounded-2xl p-6 border-2 border-sky-500/40 relative overflow-hidden flex flex-col justify-between" data-aos="fade-right">
+          <div class="absolute top-0 end-0 bg-sky-500/20 text-sky-300 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-bl-xl border-b border-s border-sky-500/30" data-i18n="edition_lab_badge">
+            Recommandé Sciences & Physique
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-flask-vial"></i>
+              </div>
+              <div class="text-start">
+                <h3 class="font-display font-bold text-lg text-white" data-i18n="edition_lab_title">Version Avec Laboratoires</h3>
+                <p class="text-xs text-sky-400 font-medium" data-i18n="edition_lab_sub">Physique, Chimie, Électricité & Mathématiques</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4 text-start" data-i18n="edition_lab_desc">
+              Comprend tous les outils du tableau interactif ainsi que le laboratoire d'électricité complet (circuits RC/RLC, MNA, oscilloscope) et les instruments de chimie.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 text-start">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f1">Atelier d'électricité &amp; câblage interactif</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f2">Oscilloscope bi-courbe &amp; solveur nodal MNA</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f3">Verrerie de chimie (Béchers, Erlenmeyers, etc.)</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f4">GeoGebra, Casio fx-991ES &amp; Géométrie inclus</span></li>
+            </ul>
+          </div>
+          <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard_Avec_Labo.exe" class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-xs transition-all glow-btn flex items-center justify-center gap-2">
+            <i class="fa-solid fa-download"></i>
+            <span data-i18n="edition_lab_btn">Télécharger Version Avec Labos (Windows)</span>
+          </a>
+        </div>
+
+        <!-- Edition 2: Sans Laboratoires -->
+        <div class="glass-card rounded-2xl p-6 border border-slate-700/80 relative overflow-hidden flex flex-col justify-between" data-aos="fade-left">
+          <div class="absolute top-0 end-0 bg-emerald-500/20 text-emerald-300 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-bl-xl border-b border-s border-emerald-500/30" data-i18n="edition_nolab_badge">
+            Recommandé Mathématiques
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+              <div class="text-start">
+                <h3 class="font-display font-bold text-lg text-white" data-i18n="edition_nolab_title">Version Sans Laboratoires</h3>
+                <p class="text-xs text-emerald-400 font-medium" data-i18n="edition_nolab_sub">Édition Allégée &amp; Ultra-Rapide (Maths)</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4 text-start" data-i18n="edition_nolab_desc">
+              Édition allégée spécialement conçue pour les professeurs de mathématiques. Téléchargement rapide, démarrage instantané, centrée sur le tableau interactif et le calcul.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 text-start">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f1">Tableau Blanc, Noir &amp; Cadre Bois d'école</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f2">Calculatrice Casio fx-991ES toujours visible</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f3">Instruments de géométrie magnétiques &amp; GeoGebra</span></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f4">Traceur de courbes f(x) et tangentes rigoureuses</span></li>
+            </ul>
+          </div>
+          <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-download text-sky-400"></i>
+            <span data-i18n="edition_nolab_btn">Télécharger Version Sans Labos (Windows)</span>
+          </a>
+        </div>
+
       </div>
 
     </div>
@@ -574,7 +691,7 @@
           </div>
           <h3 class="font-display font-bold text-xl text-white mb-2" data-i18n="f3_title">Traceur f(x) Découpé Rigoureusement</h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="f3_desc">
-            Algorithme de découpage strict aux bornes $[x_{\min}, x_{\max}] \times [y_{\min}, y_{\max}]$, tangentes automatiques et vecteurs unitaires $(\vec{\imath}, \vec{\jmath})$ de même longueur.
+            Algorithme de découpage strict aux bornes $[x_{min}, x_{max}] 	imes [y_{min}, y_{max}]$, tangentes automatiques et vecteurs unitaires $(ec{imath}, ec{jmath})$ de même longueur.
           </p>
         </div>
 
@@ -668,7 +785,7 @@
           </div>
           <h3 class="font-display font-bold text-xl text-white mb-2" data-i18n="step1_title">Installation</h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n-html="step1_desc">
-            Téléchargez et lancez <strong>Setup_SoltaniBoard.exe</strong> sur votre PC Windows 10 ou 11.
+            Téléchargez et lancez le programme d'installation (version Avec ou Sans Labos) sur votre PC Windows 10 ou 11.
           </p>
         </div>
 
@@ -724,7 +841,18 @@
       </div>
 
       <div class="space-y-4">
-        <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start" data-aos="fade-up">
+        <!-- New FAQ: Différence entre version avec labos et sans labos -->
+        <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start border border-sky-500/30" data-aos="fade-up" open>
+          <summary class="font-bold text-white flex items-center justify-between">
+            <span data-i18n="faq_q_editions" class="text-sky-300">Quelle est la différence entre la version avec labos et la version sans labos ?</span>
+            <i class="fa-solid fa-chevron-down text-sky-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-slate-400 text-sm mt-3 leading-relaxed" data-i18n-html="faq_a_editions">
+            La <strong>version avec laboratoires</strong> intègre l'atelier complet d'électricité (câblage en temps réel, solveur nodal MNA, circuits RC/RLC, oscilloscope bi-courbe) et la verrerie de chimie interactive. La <strong>version sans laboratoires</strong> est une édition allégée ultra-rapide, spécialement optimisée pour les professeurs de mathématiques (tableau blanc/noir, calculatrice Casio fx-991ES, GeoGebra, géométrie magnétique et traceur de courbes).
+          </p>
+        </details>
+
+        <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start" data-aos="fade-up" data-aos-delay="100">
           <summary class="font-bold text-white flex items-center justify-between">
             <span data-i18n="faq_q1">Quels sont les systèmes d'exploitation compatibles ?</span>
             <i class="fa-solid fa-chevron-down text-sky-400 group-open:rotate-180 transition-transform"></i>
@@ -734,7 +862,7 @@
           </p>
         </details>
 
-        <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start" data-aos="fade-up" data-aos-delay="100">
+        <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start" data-aos="fade-up" data-aos-delay="150">
           <summary class="font-bold text-white flex items-center justify-between">
             <span data-i18n="faq_q2">La calculatrice Casio nécessite-t-elle une installation séparée ?</span>
             <i class="fa-solid fa-chevron-down text-sky-400 group-open:rotate-180 transition-transform"></i>
@@ -776,9 +904,15 @@
           <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer_links_title">Liens & Téléchargement</h4>
           <ul class="space-y-2.5 text-xs">
             <li>
+              <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard_Avec_Labo.exe" class="hover:text-sky-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-flask-vial text-sky-400"></i>
+                <span data-i18n="footer_link_download_with_lab">Télécharger Setup (Avec Labos - Sciences)</span>
+              </a>
+            </li>
+            <li>
               <a href="https://github.com/soltaniboard/soltaniboard/releases/download/v2.5/Setup_SoltaniBoard.exe" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-                <i class="fa-solid fa-download text-sky-400"></i>
-                <span data-i18n="footer_link_download">Télécharger l'Installateur Windows</span>
+                <i class="fa-solid fa-calculator text-emerald-400"></i>
+                <span data-i18n="footer_link_download_no_lab">Télécharger Setup (Sans Labos - Maths)</span>
               </a>
             </li>
             <li>
@@ -809,7 +943,7 @@
       <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <span data-i18n="footer_copyright">© 2026 SoltaniBoard. Tous droits réservés.</span>
         
-        <!-- Bouton demandé par l'utilisateur -->
+        <!-- Bouton d'activation WhatsApp -->
         <a id="footer-cta-wa" href="https://wa.me/21629403406?text=Bonjour%20professeur,%20je%20souhaite%20activer%20SoltaniBoard" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-emerald-950/60 hover:bg-emerald-900/60 border-2 border-emerald-400/80 text-emerald-400 font-display font-bold text-sm sm:text-base transition-all glow-wa hover:scale-105 shadow-xl">
           <i class="fa-brands fa-whatsapp text-xl"></i>
           <span data-i18n="footer_cta_btn">Activation & Assistance Rapide</span>
@@ -841,14 +975,22 @@
         nav_faq: "FAQ",
         nav_wa: "WhatsApp Support",
         nav_download: "Télécharger",
+        nav_download_with_lab: "Version Avec Labos (Sciences)",
+        nav_download_with_lab_desc: "Électricité, circuits, verrerie & maths",
+        nav_download_no_lab: "Version Sans Labos (Maths)",
+        nav_download_no_lab_desc: "Allégée : traceur f(x), Casio, géométrie",
         nav_language: "Langue",
-        mobile_download: "Télécharger Setup (Windows)",
+        mobile_download_with_lab: "Télécharger Avec Labos (Sciences)",
+        mobile_download_no_lab: "Télécharger Sans Labos (Maths)",
         mobile_wa: "Contacter sur WhatsApp",
         
         hero_badge: "Version 2026/2027 Officielle • Dédiée aux Professeurs de Collège, Lycée & Supérieur",
-        hero_title: "Donnez Vie à Vos Cours <br/><span class=\"gradient-text\">de Mathématiques & Sciences</span>",
+        hero_title: "Donnez Vie à Vos Cours <br/><span class=\'gradient-text\'>de Mathématiques & Sciences</span>",
         hero_desc: "Plus qu'un tableau blanc classique : une suite pédagogique complète avec <strong>GeoGebra</strong>, calculatrice <strong>Casio fx-991ES toujours visible</strong>, <strong>instruments de géométrie magnétiques</strong> et simulateurs de physique-chimie.",
-        hero_cta: "Télécharger SoltaniBoard (Windows)",
+        hero_cta_with_lab: "Télécharger — Avec Labos",
+        hero_cta_with_lab_sub: "Physique, Circuits RC/RLC, Chimie & Maths",
+        hero_cta_no_lab: "Télécharger — Sans Labos",
+        hero_cta_no_lab_sub: "Version Allégée : Maths, Casio & Géométrie",
         hero_badge_win: "Windows 10 & 11 (64-bit)",
         hero_badge_pen: "Stylet & Crayon sans latence",
         hero_badge_proj: "Optimisé Vidéo-projecteurs & TNI",
@@ -857,6 +999,25 @@
         hero_window_expand: "Agrandir Plein Écran",
         hero_window_zoom: "Cliquez pour zoomer",
         
+        edition_lab_badge: "Recommandé Sciences & Physique",
+        edition_lab_title: "Version Avec Laboratoires",
+        edition_lab_sub: "Physique, Chimie, Électricité & Mathématiques",
+        edition_lab_desc: "Comprend tous les outils du tableau interactif ainsi que le laboratoire d'électricité complet (circuits RC/RLC, MNA, oscilloscope) et les instruments de chimie.",
+        edition_lab_f1: "Atelier d'électricité & câblage interactif",
+        edition_lab_f2: "Oscilloscope bi-courbe & solveur nodal MNA",
+        edition_lab_f3: "Verrerie de chimie (Béchers, Erlenmeyers, etc.)",
+        edition_lab_f4: "GeoGebra, Casio fx-991ES & Géométrie inclus",
+        edition_lab_btn: "Télécharger Version Avec Labos (Windows)",
+        edition_nolab_badge: "Recommandé Mathématiques",
+        edition_nolab_title: "Version Sans Laboratoires",
+        edition_nolab_sub: "Édition Allégée & Ultra-Rapide (Maths)",
+        edition_nolab_desc: "Édition allégée spécialement conçue pour les professeurs de mathématiques. Téléchargement rapide, démarrage instantané, centrée sur le tableau interactif et le calcul.",
+        edition_nolab_f1: "Tableau Blanc, Noir & Cadre Bois d'école",
+        edition_nolab_f2: "Calculatrice Casio fx-991ES toujours visible",
+        edition_nolab_f3: "Instruments de géométrie magnétiques & GeoGebra",
+        edition_nolab_f4: "Traceur de courbes f(x) et tangentes rigoureuses",
+        edition_nolab_btn: "Télécharger Version Sans Labos (Windows)",
+
         gallery_badge: "Captures d'Écran Réelles",
         gallery_title: "Explorez l'Interface Réelle de SoltaniBoard",
         gallery_desc: "Découvrez en détails les 4 principaux environnements scientifiques intégrés au logiciel.",
@@ -909,7 +1070,7 @@
         f2_title: "Casio fx-991ES Toujours Visible",
         f2_desc: "L'émulateur Casio reste verrouillé en superposition (TopMost) pour manipuler les touches tout en écrivant au stylet sans être masqué.",
         f3_title: "Traceur f(x) Découpé Rigoureusement",
-        f3_desc: "Algorithme de découpage strict aux bornes $[x_{\\min}, x_{\\max}] \\times [y_{\\min}, y_{\\max}]$, tangentes automatiques et vecteurs unitaires $(\\vec{\\imath}, \\vec{\\jmath})$ de même longueur.",
+        f3_desc: "Algorithme de découpage strict aux bornes $[x_{\min}, x_{\max}] \times [y_{\min}, y_{\max}]$, tangentes automatiques et vecteurs unitaires $(\vec{\imath}, \vec{\jmath})$ de même longueur.",
         f4_title: "Géométrie Instrumentale",
         f4_desc: "Règle graduée, équerre d'angle droit, rapporteur circulaire et compas à pointe fixe pour enseigner la géométrie pure comme au tableau physique.",
         f5_title: "Mode Double Page & Export PDF",
@@ -933,19 +1094,21 @@
         price_btn: "Commander via WhatsApp",
         
         step1_title: "Installation",
-        step1_desc: "Téléchargez et lancez <strong>Setup_SoltaniBoard.exe</strong> sur votre PC Windows 10 ou 11.",
+        step1_desc: "Téléchargez et lancez le programme d'installation (version Avec ou Sans Labos) sur votre PC Windows 10 ou 11.",
         step2_title: "Identifiant Machine",
         step2_desc: "Relevez votre code machine unique qui s'affiche automatiquement dans la fenêtre d'activation (ex: <code>SB-XXXX-XXXX</code>).",
         step3_title: "Clé d'Activation",
         step3_desc: "Transmettez votre code au support WhatsApp pour recevoir votre clé officielle et débloquer toutes les fonctionnalités.",
         
-        wa_banner_badge: "Licence 2 ans — <span class=\"text-white ms-1\">53 $ USD</span>",
+        wa_banner_badge: "Licence 2 ans — <span class=\'text-white ms-1\'>53 $ USD</span>",
         wa_banner_title: "Demande d'Activation & Renseignements",
-        wa_banner_desc: "Contactez le support officiel sur WhatsApp pour régler votre licence (<strong class=\"text-white\">53 $</strong> pour 2 ans) et recevoir votre clé d'activation personnalisée.",
+        wa_banner_desc: "Contactez le support officiel sur WhatsApp pour régler votre licence (<strong class=\'text-white\'>53 $</strong> pour 2 ans) et recevoir votre clé d'activation personnalisée.",
         wa_banner_btn: "Ouvrir la discussion WhatsApp (+216 29 403 406)",
         
         faq_title: "Questions Fréquentes",
         faq_desc: "Tout ce que vous devez savoir avant d'installer le logiciel.",
+        faq_q_editions: "Quelle est la différence entre la version avec labos et la version sans labos ?",
+        faq_a_editions: "La <strong>version avec laboratoires</strong> intègre l'atelier complet d'électricité (câblage en temps réel, solveur nodal MNA, circuits RC/RLC, oscilloscope bi-courbe) et la verrerie de chimie interactive. La <strong>version sans laboratoires</strong> est une édition allégée ultra-rapide, spécialement optimisée pour les professeurs de mathématiques (tableau blanc/noir, calculatrice Casio fx-991ES, GeoGebra, géométrie magnétique et traceur de courbes).",
         faq_q1: "Quels sont les systèmes d'exploitation compatibles ?",
         faq_a1: "SoltaniBoard fonctionne de manière optimale sur tout ordinateur équipé de <strong>Windows 10 ou Windows 11 (64 bits)</strong>. Il est entièrement compatible avec les écrans tactiles, vidéo-projecteurs interactifs et tablettes graphiques (Wacom, Huion, XP-Pen, etc.).",
         faq_q2: "La calculatrice Casio nécessite-t-elle une installation séparée ?",
@@ -955,7 +1118,8 @@
         
         footer_desc: "Solution pédagogique interactive nouvelle génération pour l'enseignement des mathématiques, de la physique et de la chimie.",
         footer_links_title: "Liens & Téléchargement",
-        footer_link_download: "Télécharger l'Installateur Windows",
+        footer_link_download_with_lab: "Télécharger Setup (Avec Labos - Sciences)",
+        footer_link_download_no_lab: "Télécharger Setup (Sans Labos - Maths)",
         footer_link_github: "Dépôt GitHub Officiel",
         footer_contact_title: "Support & Contact",
         footer_contact_wa: "Contacter par WhatsApp",
@@ -981,14 +1145,22 @@
         nav_faq: "FAQ",
         nav_wa: "WhatsApp Support",
         nav_download: "Download",
+        nav_download_with_lab: "Version With Labs (Science)",
+        nav_download_with_lab_desc: "Electricity, circuits, glassware & math",
+        nav_download_no_lab: "Version Without Labs (Math)",
+        nav_download_no_lab_desc: "Lightweight: f(x) plotter, Casio, geometry",
         nav_language: "Language",
-        mobile_download: "Download Setup (Windows)",
+        mobile_download_with_lab: "Download With Labs (Science)",
+        mobile_download_no_lab: "Download Without Labs (Math)",
         mobile_wa: "Contact on WhatsApp",
         
         hero_badge: "Official 2026/2027 Version • Dedicated to Middle School, High School & University Teachers",
-        hero_title: "Bring Your Lessons to Life <br/><span class=\"gradient-text\">in Mathematics & Sciences</span>",
+        hero_title: "Bring Your Lessons to Life <br/><span class=\'gradient-text\'>in Mathematics & Sciences</span>",
         hero_desc: "More than a standard whiteboard: a complete pedagogical suite featuring <strong>GeoGebra</strong>, <strong>always-on Casio fx-991ES calculator</strong>, <strong>magnetic geometry tools</strong>, and physics-chemistry simulators.",
-        hero_cta: "Download SoltaniBoard (Windows)",
+        hero_cta_with_lab: "Download — With Labs",
+        hero_cta_with_lab_sub: "Physics, RC/RLC Circuits, Chemistry & Math",
+        hero_cta_no_lab: "Download — Without Labs",
+        hero_cta_no_lab_sub: "Lightweight Edition: Math, Casio & Geometry",
         hero_badge_win: "Windows 10 & 11 (64-bit)",
         hero_badge_pen: "Zero-latency Stylus & Pencil",
         hero_badge_proj: "Optimized for Projectors & Smartboards",
@@ -997,6 +1169,25 @@
         hero_window_expand: "Fullscreen View",
         hero_window_zoom: "Click to zoom",
         
+        edition_lab_badge: "Recommended for Science & Physics",
+        edition_lab_title: "Version With Laboratories",
+        edition_lab_sub: "Physics, Chemistry, Electricity & Mathematics",
+        edition_lab_desc: "Includes all interactive whiteboard tools plus the full electrical laboratory (RC/RLC circuits, MNA, oscilloscope) and interactive chemistry instruments.",
+        edition_lab_f1: "Electrical workshop & interactive wiring",
+        edition_lab_f2: "Dual-trace oscilloscope & MNA nodal solver",
+        edition_lab_f3: "Chemistry glassware (Beakers, Erlenmeyers, etc.)",
+        edition_lab_f4: "GeoGebra, Casio fx-991ES & Geometry included",
+        edition_lab_btn: "Download With Labs Edition (Windows)",
+        edition_nolab_badge: "Recommended for Mathematics",
+        edition_nolab_title: "Version Without Laboratories",
+        edition_nolab_sub: "Lightweight & Ultra-Fast Edition (Math)",
+        edition_nolab_desc: "Lightweight edition designed specifically for math teachers. Fast download, instant startup, centered on whiteboard teaching and graphing.",
+        edition_nolab_f1: "Whiteboard, Chalkboard & Wooden School Frame",
+        edition_nolab_f2: "Always-on Casio fx-991ES calculator",
+        edition_nolab_f3: "Magnetic geometry tools & GeoGebra",
+        edition_nolab_f4: "Strict f(x) curve plotter and tangent lines",
+        edition_nolab_btn: "Download Without Labs Edition (Windows)",
+
         gallery_badge: "Real Screenshots",
         gallery_title: "Explore the Real SoltaniBoard Interface",
         gallery_desc: "Discover in detail the 4 main scientific environments integrated into the software.",
@@ -1049,7 +1240,7 @@
         f2_title: "Always-on Casio fx-991ES",
         f2_desc: "The Casio emulator remains pinned on top (TopMost) so you can press keys while writing with the digital stylus without obstruction.",
         f3_title: "Strictly Clipped f(x) Plotter",
-        f3_desc: "Strict clipping algorithm bounded by $[x_{\\min}, x_{\\max}] \\times [y_{\\min}, y_{\\max}]$, automatic tangent lines, and equal unit vectors $(\\vec{\\imath}, \\vec{\\jmath})$.",
+        f3_desc: "Strict clipping algorithm bounded by $[x_{\min}, x_{\max}] \times [y_{\min}, y_{\max}]$, automatic tangent lines, and equal unit vectors $(\vec{\imath}, \vec{\jmath})$.",
         f4_title: "Instrumental Geometry",
         f4_desc: "Graduated ruler, right-angle set square, circular protractor, and fixed-needle compass to teach pure geometry as on a physical board.",
         f5_title: "Dual-Page Mode & PDF Export",
@@ -1073,19 +1264,21 @@
         price_btn: "Order via WhatsApp",
         
         step1_title: "Installation",
-        step1_desc: "Download and run <strong>Setup_SoltaniBoard.exe</strong> on your Windows 10 or 11 PC.",
+        step1_desc: "Download and run the installer (With or Without Labs edition) on your Windows 10 or 11 PC.",
         step2_title: "Machine ID",
         step2_desc: "Retrieve your unique machine code shown automatically in the activation window (e.g., <code>SB-XXXX-XXXX</code>).",
         step3_title: "Activation Key",
         step3_desc: "Send your machine code to WhatsApp support to receive your official key and unlock all software capabilities.",
         
-        wa_banner_badge: "2-Year License — <span class=\"text-white ms-1\">$53 USD</span>",
+        wa_banner_badge: "2-Year License — <span class=\'text-white ms-1\'>$53 USD</span>",
         wa_banner_title: "Activation Request & Inquiries",
-        wa_banner_desc: "Contact official support on WhatsApp to purchase your license (<strong class=\"text-white\">$53</strong> for 2 years) and receive your personalized activation key.",
+        wa_banner_desc: "Contact official support on WhatsApp to purchase your license (<strong class=\'text-white\'>$53</strong> for 2 years) and receive your personalized activation key.",
         wa_banner_btn: "Open WhatsApp Chat (+216 29 403 406)",
         
         faq_title: "Frequently Asked Questions",
         faq_desc: "Everything you need to know before installing the software.",
+        faq_q_editions: "What is the difference between the edition with labs and without labs?",
+        faq_a_editions: "The <strong>edition with laboratories</strong> includes the complete electrical workshop (real-time wiring, MNA nodal solver, RC/RLC circuits, dual-trace oscilloscope) and interactive chemistry glassware. The <strong>edition without laboratories</strong> is a lightweight, ultra-fast edition optimized for mathematics teachers (whiteboard/blackboard, Casio fx-991ES calculator, GeoGebra, magnetic geometry, and curve plotter).",
         faq_q1: "Which operating systems are supported?",
         faq_a1: "SoltaniBoard runs smoothly on any PC running <strong>Windows 10 or Windows 11 (64-bit)</strong>. It is fully compatible with touchscreens, interactive projectors, and drawing tablets (Wacom, Huion, XP-Pen, etc.).",
         faq_q2: "Does the Casio calculator require separate installation?",
@@ -1095,7 +1288,8 @@
         
         footer_desc: "Next-generation interactive pedagogical solution for teaching mathematics, physics, and chemistry.",
         footer_links_title: "Links & Download",
-        footer_link_download: "Download Windows Installer",
+        footer_link_download_with_lab: "Download Setup (With Labs - Science)",
+        footer_link_download_no_lab: "Download Setup (Without Labs - Math)",
         footer_link_github: "Official GitHub Repository",
         footer_contact_title: "Support & Contact",
         footer_contact_wa: "Contact via WhatsApp",
@@ -1121,14 +1315,22 @@
         nav_faq: "الأسئلة الشائعة",
         nav_wa: "دعم واتساب",
         nav_download: "تحميل البرنامج",
+        nav_download_with_lab: "نسخة مع المخابر (العلوم والفيزياء)",
+        nav_download_with_lab_desc: "كهرباء، دارات، زجاجيات كيمياء ورياضيات",
+        nav_download_no_lab: "نسخة بدون مخابر (الرياضيات)",
+        nav_download_no_lab_desc: "نسخة مخففة: راسم الدوال، كاسيو وهندسة",
         nav_language: "اللغة",
-        mobile_download: "تحميل البرنامج (ويندوز)",
+        mobile_download_with_lab: "تحميل مع المخابر (علوم وفيزياء)",
+        mobile_download_no_lab: "تحميل بدون مخابر (رياضيات)",
         mobile_wa: "تواصل عبر واتساب",
         
         hero_badge: "النسخة الرسمية 2026/2027 • مخصصة لأساتذة التعليم الإعدادي، الثانوي والجامعي",
-        hero_title: "أضف الحيوية والإبداع لدروسك <br/><span class=\"gradient-text\">في الرياضيات والعلوم</span>",
+        hero_title: "أضف الحيوية والإبداع لدروسك <br/><span class=\'gradient-text\'>في الرياضيات والعلوم</span>",
         hero_desc: "أكثر من مجرد سبورة بيضاء عادية: بيئة تعليمية متكاملة مدعومة ببرنامج <strong>GeoGebra</strong>، آلة حاسبة <strong>Casio fx-991ES تطفو دائماً في الواجهة</strong>، <strong>أدوات هندسية ممغنطة</strong> ومحاكيات تفاعلية للفيزياء والكيمياء.",
-        hero_cta: "تحميل برنامج SoltaniBoard (ويندوز)",
+        hero_cta_with_lab: "تحميل — مع المخابر",
+        hero_cta_with_lab_sub: "فيزياء، دارات RC/RLC، كيمياء ورياضيات",
+        hero_cta_no_lab: "تحميل — بدون مخابر",
+        hero_cta_no_lab_sub: "نسخة خفيفة وسريعة: رياضيات، كاسيو وهندسة",
         hero_badge_win: "ويندوز 10 و 11 (64 بت)",
         hero_badge_pen: "قلم رقمي سلس بدون تأخير",
         hero_badge_proj: "متوافق مع أجهزة العرض والشاشات التفاعلية",
@@ -1137,6 +1339,25 @@
         hero_window_expand: "تكبير ملء الشاشة",
         hero_window_zoom: "انقر للتكبير",
         
+        edition_lab_badge: "موصى به لأساتذة الفيزياء والعلوم",
+        edition_lab_title: "النسخة المزودة بالمخابر العلمية",
+        edition_lab_sub: "فيزياء، كيمياء، كهرباء ورياضيات",
+        edition_lab_desc: "تتضمن كافة أدوات السبورة التفاعلية بالإضافة إلى مخبر الكهرباء الكامل (دارات RC/RLC، راسم الاهتزاز، حل العقد MNA) وأدوات الكيمياء التفاعلية.",
+        edition_lab_f1: "ورشة كهرباء وتوصيل أسلاك تفاعلي",
+        edition_lab_f2: "راسم اهتزاز ثنائي المنحنى وحل العقد MNA",
+        edition_lab_f3: "زجاجيات كيميائية (بيشر، إرلنماير، إلخ)",
+        edition_lab_f4: "جيوجبرا، آلة كاسيو fx-991ES وهندسة متكاملة",
+        edition_lab_btn: "تحميل النسخة مع المخابر (ويندوز)",
+        edition_nolab_badge: "موصى به لأساتذة الرياضيات",
+        edition_nolab_title: "النسخة بدون مخابر (رياضيات)",
+        edition_nolab_sub: "نسخة خفيفة وفائقة السرعة (رياضيات)",
+        edition_nolab_desc: "نسخة مخففة مصممة خصيصاً لأساتذة الرياضيات. حجم تحميل خفيف، تشغيل سريع، تركز على السبورة التفاعلية، الحساب الجبري والرسم الهندسي.",
+        edition_nolab_f1: "سبورة بيضاء وسوداء وإطار خشبي مدرسي",
+        edition_nolab_f2: "آلة حاسبة كاسيو fx-991ES في الواجهة دائماً",
+        edition_nolab_f3: "أدوات هندسة ممغنطة وبرنامج جيوجبرا",
+        edition_nolab_f4: "راسم دوال f(x) دقيق وحساب المماسات",
+        edition_nolab_btn: "تحميل النسخة بدون مخابر (ويندوز)",
+
         gallery_badge: "لقطات شاشة حقيقية",
         gallery_title: "استكشف واجهة SoltaniBoard الفعلية",
         gallery_desc: "اكتشف بالتفصيل البيئات العلمية الأربع الرئيسية المدمجة في البرنامج.",
@@ -1189,7 +1410,7 @@
         f2_title: "كاسيو fx-991ES دائماً في الواجهة",
         f2_desc: "محاكي كاسيو يظل مثبتاً في الطبقة العليا (TopMost) لاستخدام المفاتيح بالتزامن مع الكتابة بالقلم دون أن تحتجب الحاسبة.",
         f3_title: "راسم دوال f(x) بحدود رياضية دقيقة",
-        f3_desc: "خوارزمية تقطيع دقيقة ضمن حدود المجال الرياضي $[x_{\\min}, x_{\\max}] \\times [y_{\\min}, y_{\\max}]$، مماسات تلقائية، ومتجهات وحدة متساوية الطول $(\\vec{\\imath}, \\vec{\\jmath})$.",
+        f3_desc: "خوارزمية تقطيع دقيقة ضمن حدود المجال الرياضي $[x_{\min}, x_{\max}] \times [y_{\min}, y_{\max}]$، مماسات تلقائية، ومتجهات وحدة متساوية الطول $(\vec{\imath}, \vec{\jmath})$.",
         f4_title: "أدوات الهندسة الحقيقية",
         f4_desc: "مسطرة مدرجة، كوس بزاوية قائمة، منقلة دائرية وبركار بنقطة ثابتة لتعليم الهندسة الصرفة بدقة كما على السبورة العادية.",
         f5_title: "نمط الصفحتين وتصدير PDF",
@@ -1213,19 +1434,21 @@
         price_btn: "اطلب التفعيل عبر واتساب",
         
         step1_title: "التثبيت",
-        step1_desc: "قم بتحميل وتشغيل ملف <strong>Setup_SoltaniBoard.exe</strong> على جهازك بنظام Windows 10 أو 11.",
+        step1_desc: "قم بتحميل وتشغيل مثبت البرنامج (النسخة مع المخابر أو بدونها) على حاسوبك بنظام ويندوز 10 أو 11.",
         step2_title: "معرف الجهاز",
         step2_desc: "انسخ رمز الجهاز الفريد الخاص بك الظاهر تلقائياً في نافذة التفعيل (مثل: <code>SB-XXXX-XXXX</code>).",
         step3_title: "مفتاح التفعيل",
         step3_desc: "أرسل الرمز عبر واتساب لاستلام مفتاح التفعيل الرسمي وتشغيل كافة الوظائف فوراً.",
         
-        wa_banner_badge: "ترخيص لمدة سنتين — <span class=\"text-white ms-1\">53 $ دولار</span>",
+        wa_banner_badge: "ترخيص لمدة سنتين — <span class=\'text-white ms-1\'>53 $ دولار</span>",
         wa_banner_title: "طلب التفعيل والاستفسارات",
-        wa_banner_desc: "تواصل مع الدعم الفني الرسمي عبر واتساب لتسديد رسوم الترخيص (<strong class=\"text-white\">53 دولار</strong> لمدة سنتين) واستلام مفتاح التفعيل الخاص بك.",
+        wa_banner_desc: "تواصل مع الدعم الفني الرسمي عبر واتساب لتسديد رسوم الترخيص (<strong class=\'text-white\'>53 دولار</strong> لمدة سنتين) واستلام مفتاح التفعيل الخاص بك.",
         wa_banner_btn: "فتح محادثة واتساب (+216 29 403 406)",
         
         faq_title: "الأسئلة الشائعة",
         faq_desc: "كل ما تود معرفته قبل تثبيت واستخدام البرنامج.",
+        faq_q_editions: "ما الفرق بين النسخة المزودة بالمخابر والنسخة بدون مخابر؟",
+        faq_a_editions: "<strong>النسخة المزودة بالمخابر</strong> تتضمن ورشة الكهرباء التفاعلية الكاملة (توصيل دارات RC/RLC، حل العقد MNA، راسم اهتزاز مهبطي) وزجاجيات الكيمياء. بينما <strong>النسخة بدون مخابر</strong> هي نسخة خفيفة وسريعة التحميل والتشغيل، مخصصة لأساتذة الرياضيات (سبورة بيضاء/سوداء، آلة كاسيو fx-991ES، جيوجبرا، أدوات هندسية ممغنطة وراسم منحنيات الدوال).",
         faq_q1: "ما هي أنظمة التشغيل المتوافقة مع البرنامج؟",
         faq_a1: "يعمل SoltaniBoard بكفاءة عالية على جميع الحواسيب بنظام <strong>Windows 10 أو Windows 11 (64 بت)</strong>. متوافق تماماً مع الشاشات اللمسية، أجهزة العرض التفاعلية (Data show)، وألواح الرسم الرقمي (Wacom، Huion، XP-Pen وغيرها).",
         faq_q2: "هل تتطلب آلة كاسيو الحاسبة تثبيتاً مستقلاً؟",
@@ -1235,7 +1458,8 @@
         
         footer_desc: "حل تعليمي تفاعلي من الجيل الجديد لتدريس الرياضيات والفيزياء والكيمياء.",
         footer_links_title: "الروابط والتحميل",
-        footer_link_download: "تحميل مثبت البرنامج للويندوز",
+        footer_link_download_with_lab: "تحميل المثبت (مع المخابر - علوم)",
+        footer_link_download_no_lab: "تحميل المثبت (بدون مخابر - رياضيات)",
         footer_link_github: "المستودع الرسمي على GitHub",
         footer_contact_title: "الدعم الفني والاتصال",
         footer_contact_wa: "تواصل عبر واتساب",
@@ -1372,8 +1596,31 @@
       const chevron = document.getElementById('langChevron');
       if (!dropdown) return;
       dropdown.classList.toggle('hidden');
-      if (chevron) {
-        chevron.classList.toggle('rotate-180');
+      if (chevron) chevron.classList.toggle('rotate-180');
+      
+      // Close download dropdown if open
+      const dlDropdown = document.getElementById('downloadDropdown');
+      const dlChevron = document.getElementById('downloadChevron');
+      if (dlDropdown && !dlDropdown.classList.contains('hidden')) {
+        dlDropdown.classList.add('hidden');
+        if (dlChevron) dlChevron.classList.remove('rotate-180');
+      }
+    }
+
+    // Toggle Desktop Download Dropdown
+    function toggleDownloadMenu() {
+      const dropdown = document.getElementById('downloadDropdown');
+      const chevron = document.getElementById('downloadChevron');
+      if (!dropdown) return;
+      dropdown.classList.toggle('hidden');
+      if (chevron) chevron.classList.toggle('rotate-180');
+
+      // Close lang dropdown if open
+      const langDropdown = document.getElementById('langDropdown');
+      const langChevron = document.getElementById('langChevron');
+      if (langDropdown && !langDropdown.classList.contains('hidden')) {
+        langDropdown.classList.add('hidden');
+        if (langChevron) langChevron.classList.remove('rotate-180');
       }
     }
 
@@ -1384,14 +1631,22 @@
       changeLang(order[nextIdx]);
     }
 
-    // Close Dropdown when clicking outside
+    // Close Dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-      const container = document.getElementById('langSelectorDesktop');
-      const dropdown = document.getElementById('langDropdown');
-      const chevron = document.getElementById('langChevron');
-      if (container && !container.contains(e.target) && dropdown && !dropdown.classList.contains('hidden')) {
-        dropdown.classList.add('hidden');
-        if (chevron) chevron.classList.remove('rotate-180');
+      const langContainer = document.getElementById('langSelectorDesktop');
+      const langDropdown = document.getElementById('langDropdown');
+      const langChevron = document.getElementById('langChevron');
+      if (langContainer && !langContainer.contains(e.target) && langDropdown && !langDropdown.classList.contains('hidden')) {
+        langDropdown.classList.add('hidden');
+        if (langChevron) langChevron.classList.remove('rotate-180');
+      }
+
+      const dlContainer = document.getElementById('downloadSelectorDesktop');
+      const dlDropdown = document.getElementById('downloadDropdown');
+      const dlChevron = document.getElementById('downloadChevron');
+      if (dlContainer && !dlContainer.contains(e.target) && dlDropdown && !dlDropdown.classList.contains('hidden')) {
+        dlDropdown.classList.add('hidden');
+        if (dlChevron) dlChevron.classList.remove('rotate-180');
       }
     });
 
@@ -1446,7 +1701,7 @@
       }
     }
 
-    // Lightbox modal functions (now supports translation keys)
+    // Lightbox modal functions (supports translation keys)
     function openLightbox(src, captionKeyOrText) {
       const modal = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
