@@ -1,8 +1,8 @@
 {
-  "version": "2.0.0",
-  "title": "Soltani Board v2.0",
-  "releaseDate": "2026-09-05",
-  "changelog": "• Outils de chimie interactifs avec dessin direct sur documents PDF (Bécher, Erlenmeyer, etc.)\n• Calculatrice Casio fx-991ES PLUS intégrée et 100% autonome\n• Détection automatique des mises à jour\n• Fenêtre d'activation avec ID Machine, support WhatsApp (+216 29 403 406) et tarif 53 $ USD pour 2 ans",
+  "version": "2.1.0",
+  "title": "Soltani Board v2.1",
+  "releaseDate": "2026-09-07",
+  "changelog": "• Export PDF corrigé : les textes écrits sur le tableau sont maintenant inclus dans l'export\n• Mode double fenêtre : choisir quelle fenêtre exporter en PDF (Fenêtre 1, Fenêtre 2, ou les deux fusionnées)\n• Mode double fenêtre : deux menus Fond indépendants — ▦ Fond pour la Fenêtre 1 et ▦ Fond 🪟2 pour la Fenêtre 2\n• Outils de chimie interactifs avec dessin direct sur documents PDF (Bécher, Erlenmeyer, etc.)\n• Calculatrice Casio fx-991ES PLUS intégrée et 100% autonome\n• Détection automatique des mises à jour\n• Fenêtre d'activation avec ID Machine, support WhatsApp (+216 29 403 406) et tarif 53 $ USD pour 2 ans",
   "downloadUrl": "https://wa.me/21629403406?text=Bonjour,%20je%20souhaite%20t%C3%A9l%C3%A9charger%20la%20derni%C3%A8re%20mise%20%C3%A0%20jour%20de%20Soltani%20Board",
   "whatsappUrl": "https://wa.me/21629403406?text=Bonjour,%20je%20souhaite%20t%C3%A9l%C3%A9charger%20la%20derni%C3%A8re%20mise%20%C3%A0%20jour%20de%20Soltani%20Board",
   "mandatory": false
