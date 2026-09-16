@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" dir="ltr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -193,35 +193,11 @@
           <span data-i18n="nav_wa">WhatsApp Support</span>
         </a>
 
-        <!-- Download Button with Dual Choices Dropdown -->
-        <div class="relative" id="downloadSelectorDesktop">
-          <button id="downloadBtnDesktop" onclick="toggleDownloadMenu()" class="px-5 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all glow-btn flex items-center gap-2 focus:outline-none shadow-lg">
-            <i class="fa-solid fa-cloud-arrow-down"></i>
-            <span data-i18n="nav_download">Télécharger</span>
-            <i class="fa-solid fa-chevron-down text-[10px] text-white/80 transition-transform duration-200" id="downloadChevron"></i>
-          </button>
-          
-          <div id="downloadDropdown" class="hidden absolute end-0 mt-2 w-72 bg-[#0c1533] border border-slate-700/90 rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-2xl">
-            <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-500/15 border border-transparent hover:border-sky-500/30 transition-all text-start group">
-              <div class="w-9 h-9 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
-                <i class="fa-solid fa-flask-vial"></i>
-              </div>
-              <div>
-                <div class="font-bold text-xs text-white" data-i18n="nav_download_with_lab">Version Avec Labos (Sciences)</div>
-                <div class="text-[11px] text-slate-400" data-i18n="nav_download_with_lab_desc">Électricité, circuits, verrerie & maths</div>
-              </div>
-            </a>
-            <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="flex items-start gap-3 p-3 rounded-xl hover:bg-sky-500/15 border border-transparent hover:border-sky-500/30 transition-all text-start group mt-1">
-              <div class="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
-                <i class="fa-solid fa-calculator"></i>
-              </div>
-              <div>
-                <div class="font-bold text-xs text-white" data-i18n="nav_download_no_lab">Version Sans Labos (Maths)</div>
-                <div class="text-[11px] text-slate-400" data-i18n="nav_download_no_lab_desc">Allégée : traceur f(x), calculatrice, géométrie</div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <!-- Download Button Direct (Single Version) -->
+        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="px-5 py-2.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all glow-btn flex items-center gap-2 shadow-lg">
+          <i class="fa-solid fa-cloud-arrow-down"></i>
+          <span data-i18n="nav_download">Télécharger SoltaniBoard</span>
+        </a>
 
       </div>
 
@@ -262,12 +238,8 @@
 
       <div class="pt-3 flex flex-col gap-2.5">
         <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full text-center py-3 bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg">
-          <i class="fa-solid fa-flask-vial text-amber-300"></i>
-          <span data-i18n="mobile_download_with_lab">Télécharger Avec Labos (Sciences)</span>
-        </a>
-        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full text-center py-3 bg-slate-800 text-white border border-slate-700 hover:border-sky-400 font-bold rounded-xl flex items-center justify-center gap-2">
-          <i class="fa-solid fa-calculator text-sky-400"></i>
-          <span data-i18n="mobile_download_no_lab">Télécharger Sans Labos (Maths)</span>
+          <i class="fa-solid fa-cloud-arrow-down text-amber-300"></i>
+          <span data-i18n="hero_cta_single">Télécharger SoltaniBoard PRO (101 Mo)</span>
         </a>
         <a id="mobile-wa-link" href="https://wa.me/21629403406?text=Bonjour%20professeur,%20je%20souhaite%20des%20renseignements%20sur%20SoltaniBoard" target="_blank" class="w-full text-center py-3 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 font-bold rounded-xl flex items-center justify-center gap-2">
           <i class="fa-brands fa-whatsapp"></i>
@@ -304,27 +276,15 @@
         Plus qu'un tableau blanc classique : une suite pédagogique complète avec <strong>GeoGebra</strong>, calculatrice scientifique <strong>SoltaniBoard toujours visible</strong>, <strong>instruments de géométrie magnétiques</strong> et simulateurs de physique-chimie.
       </p>
 
-      <!-- DUAL DOWNLOAD ACTION BUTTONS -->
-      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto mb-12">
-        
-        <!-- Option 1: Avec Laboratoires -->
-        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" id="hero-btn-lab" class="flex-1 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all transform hover:-translate-y-1 glow-btn flex flex-col items-center justify-center gap-1.5 shadow-xl text-center group">
-          <div class="flex items-center gap-2 font-display font-bold text-base sm:text-lg">
-            <i class="fa-solid fa-flask-vial text-xl text-amber-300 group-hover:scale-110 transition-transform"></i>
-            <span data-i18n="hero_cta_with_lab">Télécharger — Avec Labos</span>
+      <!-- SINGLE UNIFIED DOWNLOAD ACTION BUTTON -->
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-12">
+        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" id="hero-btn-download" class="w-full sm:w-auto px-8 py-5 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white hover:from-sky-400 hover:to-indigo-500 transition-all transform hover:-translate-y-1 glow-btn flex items-center justify-center gap-4 shadow-2xl text-center group">
+          <i class="fa-solid fa-cloud-arrow-down text-3xl text-amber-300 group-hover:scale-110 transition-transform"></i>
+          <div class="text-start">
+            <div class="font-display font-black text-lg sm:text-2xl leading-tight" data-i18n="hero_cta_single">Télécharger SoltaniBoard PRO</div>
+            <div class="text-xs text-sky-100 font-medium opacity-90" data-i18n="hero_cta_single_sub">Suite Complète Tout-en-Un • Maths, Physique & Chimie (101 Mo)</div>
           </div>
-          <span class="text-[11px] sm:text-xs text-sky-100 font-medium opacity-90" data-i18n="hero_cta_with_lab_sub">Physique, Circuits RC/RLC, Chimie & Maths</span>
         </a>
-
-        <!-- Option 2: Sans Laboratoires -->
-        <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" id="hero-btn-nolab" class="flex-1 p-4 sm:p-5 rounded-2xl glass-card border border-sky-400/40 text-white hover:border-sky-400 hover:bg-slate-800/80 transition-all transform hover:-translate-y-1 flex flex-col items-center justify-center gap-1.5 shadow-lg text-center group">
-          <div class="flex items-center gap-2 font-display font-bold text-base sm:text-lg">
-            <i class="fa-solid fa-calculator text-xl text-sky-400 group-hover:scale-110 transition-transform"></i>
-            <span data-i18n="hero_cta_no_lab">Télécharger — Sans Labos</span>
-          </div>
-          <span class="text-[11px] sm:text-xs text-slate-300 font-medium" data-i18n="hero_cta_no_lab_sub">Version Allégée : Maths, Calculatrice & Géométrie</span>
-        </a>
-
       </div>
 
       <!-- Trust Badges -->
@@ -373,71 +333,70 @@
     </div>
   </section>
 
-  <!-- DUAL EDITIONS COMPARISON SECTION -->
+  <!-- ALL-IN-ONE COMPLETE SUITE PRESENTATION SECTION -->
   <section class="py-12 bg-[#070e24] border-y border-slate-800/80 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card rounded-3xl p-8 sm:p-10 border-2 border-sky-500/40 relative overflow-hidden" data-aos="zoom-in">
+        <div class="absolute top-0 end-0 bg-gradient-to-l from-sky-500 to-indigo-600 text-white text-xs uppercase font-black tracking-wider px-5 py-2 rounded-bl-2xl shadow-lg" data-i18n="pack_badge">
+          Pack Officiel Tout-en-Un • Version 2026/2027
+        </div>
         
-        <!-- Edition 1: Avec Laboratoires -->
-        <div class="glass-card rounded-2xl p-6 border-2 border-sky-500/40 relative overflow-hidden flex flex-col justify-between" data-aos="fade-right">
-          <div class="absolute top-0 end-0 bg-sky-500/20 text-sky-300 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-bl-xl border-b border-s border-sky-500/30" data-i18n="edition_lab_badge">
-            Recommandé Sciences & Physique
+        <div class="max-w-3xl mb-8 text-start">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-3">
+            <i class="fa-solid fa-circle-check"></i>
+            <span data-i18n="pack_tag">Installation Unique • Tout Inclus</span>
           </div>
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">
-                <i class="fa-solid fa-flask-vial"></i>
-              </div>
-              <div class="text-start">
-                <h3 class="font-display font-bold text-lg text-white" data-i18n="edition_lab_title">Version Avec Laboratoires</h3>
-                <p class="text-xs text-sky-400 font-medium" data-i18n="edition_lab_sub">Physique, Chimie, Électricité & Mathématiques</p>
-              </div>
-            </div>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4 text-start" data-i18n="edition_lab_desc">
-              Comprend tous les outils du tableau interactif ainsi que le laboratoire d'électricité complet (circuits RC/RLC, MNA, oscilloscope) et les instruments de chimie.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 text-start">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f1">Atelier d'électricité &amp; câblage interactif</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f2">Oscilloscope bi-courbe &amp; solveur nodal MNA</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f3">Verrerie de chimie (Béchers, Erlenmeyers, etc.)</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_lab_f4">GeoGebra, Calculatrice SoltaniBoard &amp; Géométrie inclus</span></li>
-            </ul>
-          </div>
-          <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-xs transition-all glow-btn flex items-center justify-center gap-2">
-            <i class="fa-solid fa-download"></i>
-            <span data-i18n="edition_lab_btn">Télécharger Version Avec Labos (Windows)</span>
-          </a>
+          <h2 class="font-display font-black text-2xl sm:text-4xl text-white mb-3" data-i18n="pack_title">
+            Tous les Outils Pédagogiques Réunis en un Seul Logiciel
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed" data-i18n="pack_desc">
+            Plus besoin de choisir : SoltaniBoard PRO réunit désormais le tableau interactif d'école, la calculatrice scientifique, GeoGebra, la géométrie magnétique et l'ensemble des laboratoires de physique et chimie dans une seule installation fluide et ultra-rapide.
+          </p>
         </div>
 
-        <!-- Edition 2: Sans Laboratoires -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-700/80 relative overflow-hidden flex flex-col justify-between" data-aos="fade-left">
-          <div class="absolute top-0 end-0 bg-emerald-500/20 text-emerald-300 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-bl-xl border-b border-s border-emerald-500/30" data-i18n="edition_nolab_badge">
-            Recommandé Mathématiques
-          </div>
-          <div>
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
-                <i class="fa-solid fa-calculator"></i>
-              </div>
-              <div class="text-start">
-                <h3 class="font-display font-bold text-lg text-white" data-i18n="edition_nolab_title">Version Sans Laboratoires</h3>
-                <p class="text-xs text-emerald-400 font-medium" data-i18n="edition_nolab_sub">Édition Allégée &amp; Ultra-Rapide (Maths)</p>
-              </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 text-start">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center mb-2">
+              <i class="fa-solid fa-chalkboard"></i>
             </div>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4 text-start" data-i18n="edition_nolab_desc">
-              Édition allégée spécialement conçue pour les professeurs de mathématiques. Téléchargement rapide, démarrage instantané, centrée sur le tableau interactif et le calcul.
-            </p>
-            <ul class="text-xs text-slate-300 space-y-1.5 mb-6 text-start">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f1">Tableau Blanc, Noir &amp; Cadre Bois d'école</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f2">Calculatrice SoltaniBoard toujours visible</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f3">Instruments de géométrie magnétiques &amp; GeoGebra</span></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-[11px]"></i> <span data-i18n="edition_nolab_f4">Traceur de courbes f(x) et tangentes rigoureuses</span></li>
-            </ul>
+            <h4 class="font-bold text-white text-sm mb-1" data-i18n="pack_f1_title">Tableau d'École</h4>
+            <p class="text-xs text-slate-400" data-i18n="pack_f1_desc">Noir, blanc ou cadre bois avec rendu craie et encre vectorielle lissée.</p>
           </div>
-          <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-bold text-xs transition-all flex items-center justify-center gap-2">
-            <i class="fa-solid fa-download text-sky-400"></i>
-            <span data-i18n="edition_nolab_btn">Télécharger Version Sans Labos (Windows)</span>
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-2">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <h4 class="font-bold text-white text-sm mb-1" data-i18n="pack_f2_title">Calcul & GeoGebra</h4>
+            <p class="text-xs text-slate-400" data-i18n="pack_f2_desc">Calculatrice SoltaniBoard toujours visible, traceur f(x) et GeoGebra complet.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-2">
+              <i class="fa-solid fa-compass-drafting"></i>
+            </div>
+            <h4 class="font-bold text-white text-sm mb-1" data-i18n="pack_f3_title">Géométrie Magnétique</h4>
+            <p class="text-xs text-slate-400" data-i18n="pack_f3_desc">Règle, équerre, compas et rapporteur avec magnétisme intelligent.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-700/60">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-2">
+              <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <h4 class="font-bold text-white text-sm mb-1" data-i18n="pack_f4_title">Labos Physique & Chimie</h4>
+            <p class="text-xs text-slate-400" data-i18n="pack_f4_desc">Circuits RC/RLC en temps réel, oscilloscope et verrerie interactive.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-800">
+          <div class="flex items-center gap-3 text-xs text-slate-400 text-start">
+            <i class="fa-brands fa-windows text-sky-400 text-xl"></i>
+            <span>Windows 10 & 11 (64-bit) • Installeur Unique • 101 Mo</span>
+          </div>
+          <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-sm transition-all glow-btn flex items-center justify-center gap-2 shadow-xl">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <span data-i18n="pack_btn">Télécharger le Pack Complet (Setup.exe)</span>
           </a>
         </div>
 
@@ -841,14 +800,14 @@
       </div>
 
       <div class="space-y-4">
-        <!-- New FAQ: Différence entre version avec labos et sans labos -->
+        <!-- FAQ: Contenu du pack tout-en-un -->
         <details class="glass-card rounded-2xl p-5 cursor-pointer group text-start border border-sky-500/30" data-aos="fade-up" open>
           <summary class="font-bold text-white flex items-center justify-between">
-            <span data-i18n="faq_q_editions" class="text-sky-300">Quelle est la différence entre la version avec labos et la version sans labos ?</span>
+            <span data-i18n="faq_q_editions" class="text-sky-300">Que contient le pack d'installation SoltaniBoard ?</span>
             <i class="fa-solid fa-chevron-down text-sky-400 group-open:rotate-180 transition-transform"></i>
           </summary>
           <p class="text-slate-400 text-sm mt-3 leading-relaxed" data-i18n-html="faq_a_editions">
-            La <strong>version avec laboratoires</strong> intègre l'atelier complet d'électricité (câblage en temps réel, solveur nodal MNA, circuits RC/RLC, oscilloscope bi-courbe) et la verrerie de chimie interactive. La <strong>version sans laboratoires</strong> est une édition allégée ultra-rapide, spécialement optimisée pour les professeurs de mathématiques (tableau blanc/noir, calculatrice SoltaniBoard, GeoGebra, géométrie magnétique et traceur de courbes).
+            Le fichier unique d'installation <strong>Setup_SoltaniBoard.exe (101 Mo)</strong> contient l'ensemble des modules pédagogiques sans aucune restriction : tableau interactif d'école, calculatrice scientifique SoltaniBoard, intégration GeoGebra, traceur de courbes rigoureux, instruments de géométrie magnétiques, ainsi que les laboratoires complets d'électricité (circuits RC/RLC, solveur MNA, oscilloscope) et la verrerie de chimie. Tout est directement prêt à l'emploi.
           </p>
         </details>
 
@@ -905,14 +864,8 @@
           <ul class="space-y-2.5 text-xs">
             <li>
               <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-                <i class="fa-solid fa-flask-vial text-sky-400"></i>
-                <span data-i18n="footer_link_download_with_lab">Télécharger Setup (Avec Labos - Sciences)</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe" class="hover:text-sky-400 transition-colors flex items-center gap-2">
-                <i class="fa-solid fa-calculator text-emerald-400"></i>
-                <span data-i18n="footer_link_download_no_lab">Télécharger Setup (Sans Labos - Maths)</span>
+                <i class="fa-solid fa-cloud-arrow-down text-sky-400"></i>
+                <span data-i18n="footer_link_download_single">Télécharger SoltaniBoard PRO (Setup.exe)</span>
               </a>
             </li>
             <li>
@@ -987,7 +940,24 @@
         hero_badge: "Version 2026/2027 Officielle • Dédiée aux Professeurs de Collège, Lycée & Supérieur",
         hero_title: "Donnez Vie à Vos Cours <br/><span class=\'gradient-text\'>de Mathématiques & Sciences</span>",
         hero_desc: "Plus qu'un tableau blanc classique : une suite pédagogique complète avec <strong>GeoGebra</strong>, calculatrice scientifique <strong>SoltaniBoard toujours visible</strong>, <strong>instruments de géométrie magnétiques</strong> et simulateurs de physique-chimie.",
-        hero_cta_with_lab: "Télécharger — Avec Labos",
+        hero_cta_single: "Télécharger SoltaniBoard PRO",
+        hero_cta_single_sub: "Suite Complète Tout-en-Un • Maths, Physique & Chimie (101 Mo)",
+        pack_badge: "Pack Officiel Tout-en-Un • Version 2026/2027",
+        pack_tag: "Installation Unique • Tout Inclus",
+        pack_title: "Tous les Outils Pédagogiques Réunis en un Seul Logiciel",
+        pack_desc: "Plus besoin de choisir : SoltaniBoard PRO réunit désormais le tableau interactif d'école, la calculatrice scientifique, GeoGebra, la géométrie magnétique et l'ensemble des laboratoires de physique et chimie dans une seule installation fluide et ultra-rapide.",
+        pack_f1_title: "Tableau d'École",
+        pack_f1_desc: "Noir, blanc ou cadre bois avec rendu craie et encre vectorielle lissée.",
+        pack_f2_title: "Calcul & GeoGebra",
+        pack_f2_desc: "Calculatrice SoltaniBoard toujours visible, traceur f(x) et GeoGebra complet.",
+        pack_f3_title: "Géométrie Magnétique",
+        pack_f3_desc: "Règle, équerre, compas et rapporteur avec magnétisme intelligent.",
+        pack_f4_title: "Labos Physique & Chimie",
+        pack_f4_desc: "Circuits RC/RLC en temps réel, oscilloscope et verrerie interactive.",
+        pack_btn: "Télécharger le Pack Complet (Setup.exe)",
+        footer_link_download_single: "Télécharger SoltaniBoard PRO (Setup.exe)",
+        faq_q_editions: "Que contient le pack d'installation SoltaniBoard ?",
+        faq_a_editions: "Le fichier unique d'installation <strong>Setup_SoltaniBoard.exe (101 Mo)</strong> contient l'ensemble des modules pédagogiques sans aucune restriction : tableau interactif d'école, calculatrice scientifique SoltaniBoard, intégration GeoGebra, traceur de courbes rigoureux, instruments de géométrie magnétiques, ainsi que les laboratoires complets d'électricité (circuits RC/RLC, solveur MNA, oscilloscope) et la verrerie de chimie. Tout est directement prêt à l'emploi.",
         hero_cta_with_lab_sub: "Physique, Circuits RC/RLC, Chimie & Maths",
         hero_cta_no_lab: "Télécharger — Sans Labos",
         hero_cta_no_lab_sub: "Version Allégée : Maths, Calculatrice & Géométrie",
@@ -1157,7 +1127,24 @@
         hero_badge: "Official 2026/2027 Version • Dedicated to Middle School, High School & University Teachers",
         hero_title: "Bring Your Lessons to Life <br/><span class=\'gradient-text\'>in Mathematics & Sciences</span>",
         hero_desc: "More than a standard whiteboard: a complete pedagogical suite featuring <strong>GeoGebra</strong>, <strong>always-on SoltaniBoard scientific calculator</strong>, <strong>magnetic geometry tools</strong>, and physics-chemistry simulators.",
-        hero_cta_with_lab: "Download — With Labs",
+        hero_cta_single: "Download SoltaniBoard PRO",
+        hero_cta_single_sub: "Complete All-in-One Suite • Math, Physics & Chemistry (101 MB)",
+        pack_badge: "Official All-in-One Pack • 2026/2027 Version",
+        pack_tag: "Single Installation • All Included",
+        pack_title: "All Pedagogical Tools in One Single Software",
+        pack_desc: "No need to choose: SoltaniBoard PRO brings together the interactive classroom board, scientific calculator, GeoGebra, magnetic geometry, and complete physics & chemistry laboratories into a single smooth installation.",
+        pack_f1_title: "Classroom Board",
+        pack_f1_desc: "Blackboard, whiteboard or wooden school frame with smooth vector ink.",
+        pack_f2_title: "Math & GeoGebra",
+        pack_f2_desc: "Always-on SoltaniBoard calculator, f(x) plotter, and full GeoGebra integration.",
+        pack_f3_title: "Magnetic Geometry",
+        pack_f3_desc: "Ruler, set square, compass and protractor with smart magnetism.",
+        pack_f4_title: "Physics & Chemistry Labs",
+        pack_f4_desc: "Real-time RC/RLC circuits, dual-trace oscilloscope, and interactive glassware.",
+        pack_btn: "Download Complete Pack (Setup.exe)",
+        footer_link_download_single: "Download SoltaniBoard PRO (Setup.exe)",
+        faq_q_editions: "What is included in the SoltaniBoard installation pack?",
+        faq_a_editions: "The single installer <strong>Setup_SoltaniBoard.exe (101 MB)</strong> includes all pedagogical modules with zero restrictions: interactive whiteboard, SoltaniBoard scientific calculator, GeoGebra, strict f(x) curve plotter, magnetic geometry tools, as well as the complete electrical lab (RC/RLC circuits, MNA solver, oscilloscope) and chemistry glassware.",
         hero_cta_with_lab_sub: "Physics, RC/RLC Circuits, Chemistry & Math",
         hero_cta_no_lab: "Download — Without Labs",
         hero_cta_no_lab_sub: "Lightweight Edition: Math, Calculator & Geometry",
@@ -1327,7 +1314,24 @@
         hero_badge: "النسخة الرسمية 2026/2027 • مخصصة لأساتذة التعليم الإعدادي، الثانوي والجامعي",
         hero_title: "أضف الحيوية والإبداع لدروسك <br/><span class=\'gradient-text\'>في الرياضيات والعلوم</span>",
         hero_desc: "أكثر من مجرد سبورة بيضاء عادية: بيئة تعليمية متكاملة مدعومة ببرنامج <strong>GeoGebra</strong>، آلة حاسبة <strong>SoltaniBoard العلمية تطفو دائماً في الواجهة</strong>، <strong>أدوات هندسية ممغنطة</strong> ومحاكيات تفاعلية للفيزياء والكيمياء.",
-        hero_cta_with_lab: "تحميل — مع المخابر",
+        hero_cta_single: "تحميل SoltaniBoard PRO",
+        hero_cta_single_sub: "الحزمة الكاملة الشاملة • رياضيات، فيزياء وكيمياء (101 ميغابايت)",
+        pack_badge: "الحزمة الرسمية الشاملة • نسخة 2026/2027",
+        pack_tag: "تثبيت موحد • كل شيء مدمج",
+        pack_title: "جميع الأدوات التعليمية مدمجة في برنامج واحد",
+        pack_desc: "لا داعي للاختيار: يجمع SoltaniBoard PRO الآن بين السبورة التفاعلية، الآلة الحاسبة العلمية، جيوجبرا، الأدوات الهندسية الممغنطة ومخابر الفيزياء والكيمياء المتكاملة في ملف تثبيت واحد فائق السرعة والسلاسة.",
+        pack_f1_title: "سبورة المدرسة",
+        pack_f1_desc: "سبورة سوداء أو بيضاء بإطار خشبي مع حبر شعاعي فائق النعومة.",
+        pack_f2_title: "الحساب وجيوجبرا",
+        pack_f2_desc: "آلة حاسبة SoltaniBoard العلمية في الواجهة دائماً، راسم الدوال وجيوجبرا متكامل.",
+        pack_f3_title: "هندسة ممغنطة",
+        pack_f3_desc: "مسطرة، كوس، بركار ومنقلة دائرية بتمغنط ذكي.",
+        pack_f4_title: "مخابر الفيزياء والكيمياء",
+        pack_f4_desc: "دارات كهربائية RC/RLC لحظية، راسم اهتزاز مهبطي وزجاجيات كيميائية.",
+        pack_btn: "تحميل الحزمة الكاملة (Setup.exe)",
+        footer_link_download_single: "تحميل SoltaniBoard PRO (Setup.exe)",
+        faq_q_editions: "ماذا تتضمن حزمة تثبيت برنامج SoltaniBoard؟",
+        faq_a_editions: "يحتوي ملف التثبيت الموحد <strong>Setup_SoltaniBoard.exe (101 ميغابايت)</strong> على جميع الوحدات التعليمية دون أي استثناء: السبورة التفاعلية، آلة SoltaniBoard الحاسبة، برنامج GeoGebra، راسم منحنيات الدوال، الأدوات الهندسية الممغنطة، إضافة إلى مخبر الكهرباء الكامل (دارات RC/RLC، حل العقد MNA، راسم الاهتزاز) وزجاجيات الكيمياء.",
         hero_cta_with_lab_sub: "فيزياء، دارات RC/RLC، كيمياء ورياضيات",
         hero_cta_no_lab: "تحميل — بدون مخابر",
         hero_cta_no_lab_sub: "نسخة خفيفة وسريعة: رياضيات، حاسبة SoltaniBoard وهندسة",
