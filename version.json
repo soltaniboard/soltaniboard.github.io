@@ -1,8 +1,8 @@
 {
-  "version": "2.1.1",
-  "title": "Soltani Board v2.1.1",
-  "releaseDate": "2026-09-07",
-  "changelog": "• Version unique tout-en-un : suite pedagogique complete (maths, sciences, laboratoires)\n• Calculatrice scientifique SoltaniBoard integree et 100% autonome\n• Application automatique du template et fond de tableau a toutes les nouvelles pages creees\n• Mode double fenetre : fonds et templates independants par fenetre avec synchronisation complete\n• Export PDF haute fidelite incluant textes, traces et templates\n• Outils de chimie interactifs avec dessin direct sur documents PDF\n• Detection automatique des mises a jour\n• Fenetre d'activation avec ID Machine, support WhatsApp (+216 29 403 406)",
+  "version": "2.1.2",
+  "title": "Soltani Board v2.1.2",
+  "releaseDate": "2026-09-18",
+  "changelog": "• Nouvelle mise en page ergonomique adaptée aux écrans haute résolution (DPI 125%, 150%, 200%)\n• Hauteur des pages calibrée au format A4 exact (210 x 297 mm) dans chaque fenêtre\n• Mode double fenêtre avec navigation fluide et outil Main (pan) débloqué\n• Menu déroulant moderne regroupant tous les laboratoires et simulateurs scientifiques\n• Palette de surligneurs et sélecteur de couleurs optimisés\n• Export PDF haute fidélité incluant textes, tracés et templates A4\n• Calculatrice scientifique SoltaniBoard intégrée et 100% autonome",
   "downloadUrl": "https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe",
   "whatsappUrl": "https://wa.me/21629403406?text=Bonjour,%20je%20souhaite%20t%C3%A9l%C3%A9charger%20la%20derni%C3%A8re%20mise%20%C3%A0%20jour%20de%20Soltani%20Board",
   "mandatory": false
