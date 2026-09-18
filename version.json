@@ -1,8 +1,8 @@
-{
+﻿{
   "version": "2.1.2",
   "title": "Soltani Board v2.1.2",
   "releaseDate": "2026-09-18",
-  "changelog": "• Nouvelle mise en page ergonomique adaptée aux écrans haute résolution (DPI 125%, 150%, 200%)\n• Hauteur des pages calibrée au format A4 exact (210 x 297 mm) dans chaque fenêtre\n• Mode double fenêtre avec navigation fluide et outil Main (pan) débloqué\n• Menu déroulant moderne regroupant tous les laboratoires et simulateurs scientifiques\n• Palette de surligneurs et sélecteur de couleurs optimisés\n• Export PDF haute fidélité incluant textes, tracés et templates A4\n• Calculatrice scientifique SoltaniBoard intégrée et 100% autonome",
+  "changelog": "• Nouvelle mise en page ergonomique adaptee aux ecrans haute resolution (DPI 125%, 150%, 200%)\n• Hauteur des pages calibree au format A4 exact (210 x 297 mm) dans chaque fenetre\n• Mode double fenetre avec navigation fluide et outil Main (pan) debloque\n• Menu deroulant moderne regroupant tous les laboratoires et simulateurs scientifiques\n• Palette de surligneurs et selecteur de couleurs optimises\n• Export PDF haute fidelite incluant textes, traces et templates A4\n• Calculatrice scientifique SoltaniBoard integree et 100% autonome\n• Protection avancee du code source (obfuscation & chiffrement anti-decompilation)",
   "downloadUrl": "https://github.com/soltaniboard/soltaniboard.github.io/releases/download/v2.5/Setup_SoltaniBoard.exe",
   "whatsappUrl": "https://wa.me/21629403406?text=Bonjour,%20je%20souhaite%20t%C3%A9l%C3%A9charger%20la%20derni%C3%A8re%20mise%20%C3%A0%20jour%20de%20Soltani%20Board",
   "mandatory": false
